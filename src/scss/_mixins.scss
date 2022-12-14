@@ -1,0 +1,37 @@
+//  Hide only visually, but have it available for screen readers:
+//  https://snook.ca/archives/html_and_css/hiding-content-for-accessibility//
+//  1. For long content, line feeds are not interpreted as spaces and small width
+//     causes content to wrap 1 word per line:
+//     https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+//
+//  Only display content to screen readers...
+@mixin sr-only {
+	border: 0;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+@mixin truncate {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin reset-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Mixin for mobile media styles.
+@mixin mobile {
+	@media only screen and (max-width: 1200px) {
+		@content;
+	}
+}

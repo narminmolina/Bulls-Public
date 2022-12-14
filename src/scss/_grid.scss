@@ -1,0 +1,16 @@
+@import 'scss/mixins.scss';
+
+.container-wrapper {
+	max-width: 1200px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include mobile {
+		padding: 0 20px;
+	}
+
+	&.extended {
+		// max-width: 90%;
+		max-width: 1400px;
+	}
+}

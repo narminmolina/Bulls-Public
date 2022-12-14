@@ -1,0 +1,88 @@
+:root {
+	//* Fonts
+	// Families
+	// Google
+	--ff-anek: 'Anek Latin', sans-serif;
+	--ff-nato: 'Noto Sans', sans-serif;
+	// Local
+	--ff-nimbus: 'Nimbus Sans Black', sans-serif;
+	--ff-ocra: 'OCR Extended', sans-serif;
+	--ff-unison-bold: 'Unison Pro Bold', sans-serif;
+	--ff-unison-light: 'Unison Pro Light', sans-serif;
+	// Sizes
+	--fs-10: 10px;
+	--fs-11: 11px;
+	--fs-12: 12px;
+	--fs-13: 13px;
+	--fs-14: 14px;
+	--fs-15: 15px;
+	--fs-16: 16px;
+	--fs-18: 18px;
+	--fs-20: 20px;
+	--fs-22: 22px;
+	--fs-24: 24px;
+	--fs-26: 26px;
+	--fs-30: 30px;
+	--fs-36: 36px;
+	--fs-38: 38px;
+	--fs-40: 40px;
+	--fs-44: 44px;
+	--fs-50: 50px;
+	--fs-56: 56px;
+	--fs-146: 146px;
+	// Weights
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-600: 600;
+	// Line heights
+	--lh-base: 1;
+	--lh-primary: 1.2;
+	--lh-secondary: 1.1;
+	--lh-22: 22px;
+
+	//* Colors
+	--white: #fff;
+	--black: #000;
+	--anis: #f3f7e4;
+	--pink: #ff006c;
+	--success: #00c96b;
+	--gray100: #8d9092; // !
+	--gray200: #5f5f5f; // !
+	--gray300: #717375; // !
+	--gray400: #939597; // !
+	--gray500: #c4c5c7; // !
+	--gray600: #8e938a; // !
+	--gray700: #575757; // !
+	--gray800: #474747; // !
+	--gray900: #9ca197; // !
+	// TODO:
+	// #111;
+	// #1a1a1a;
+	// #1e1e1e;
+	// #ad044f;
+
+	// Border-radius
+	--b-rad-1: 1px; // !
+	--b-rad-2: 2px; // !
+	--b-rad-3: 3px; // !
+	--b-rad-5: 5px;
+	--b-rad-8: 8px;
+	--b-rad-10: 10px;
+	--b-rad-12: 12px; // !
+	--b-rad-15: 15px;
+	--b-rad-22: 22px; // !
+	--b-rad-round: 50%;
+
+	// Z-Indexes
+	--zi--10: -10;
+	--zi--5: -5;
+	--zi--1: -1;
+	--zi-1: 1;
+	--zi-5: 5;
+	--zi-10: 10;
+	--zi-15: 15;
+	--zi-filter-menu: 100;
+	--zi-header: 1000;
+	--zi-modal-mask: 1010;
+	--zi-modal-wrap: 1020;
+}

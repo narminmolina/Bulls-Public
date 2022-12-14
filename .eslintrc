@@ -1,0 +1,27 @@
+{
+	"extends": ["react-app", "react-app/jest", "plugin:jsx-a11y/recommended"],
+	"rules": {
+		"import/no-named-as-default": 0,
+		"import/no-anonymous-default-export": 0,
+		"jest/valid-title": 0,
+		"jsx-a11y/media-has-caption": 1,
+		"block-scoped-var": "warn",
+		"dot-notation": "warn",
+		"import/first": ["warn", "absolute-first"],
+		"import/newline-after-import": "warn",
+		"import/no-absolute-path": "warn",
+		"import/no-amd": "warn",
+		"import/no-duplicates": "warn",
+		"max-params": ["warn", 3],
+		"no-dupe-args": "warn",
+		"no-dupe-else-if": "warn",
+		"no-dupe-keys": "warn",
+		"no-duplicate-case": "warn",
+		"no-else-return": "warn",
+		"no-extra-boolean-cast": "warn",
+		"no-invalid-regexp": "warn",
+		"no-irregular-whitespace": "warn",
+		"no-lone-blocks": "warn",
+		"no-lonely-if": "warn"
+	}
+}

@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'OCR Extended';
+	font-style: normal;
+	font-weight: var(--fw-400);
+	font-display: swap;
+	src: url('../assets/fonts/ocra-extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Unison Pro Bold';
+	font-style: normal;
+	font-weight: var(--fw-600);
+	font-display: swap;
+	src: url('../assets/fonts/unison-pro-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Unison Pro Light';
+	font-style: normal;
+	font-weight: var(--fw-300);
+	font-display: swap;
+	src: url('../assets/fonts/unison-pro-light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Nimbus Sans Black';
+	font-style: normal;
+	font-weight: var(--fw-400);
+	font-display: swap;
+	src: url('../assets/fonts/nimbus-sans-black.woff2') format('woff2');
+}
