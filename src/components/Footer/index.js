@@ -1,7 +1,5 @@
 import { Logo } from 'components/Logo';
-import { Link } from 'react-router-dom';
 import './index.scss';
-
 
 const socialMedias = [
 	{ title: 'Telegram', link: 'https://t.me/thebullclub' },
