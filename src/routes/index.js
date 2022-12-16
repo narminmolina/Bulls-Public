@@ -4,14 +4,12 @@ import Home from 'pages/home';
 import Collection from 'pages/collection';
 // import RecentSales from 'views/recent-sales';
 
-
 export const Routes = () => {
 	return (
 		<AppRoutes>
 			<Route exact path="/" element={<Home />} />
 			<Route path="/collection" element={<Collection />} />
 			{/* <Route path="/recent-sales" element={<RecentSales />} /> */}
-
 		</AppRoutes>
 	);
 };
