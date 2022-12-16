@@ -1,0 +1,17 @@
+@import 'scss/mixins.scss';
+footer {
+	background-color: #1a1a1a;
+	padding: 20px;
+	.footer-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		nav {
+			ul {
+				display: flex;
+				gap: 30px;
+				@include reset-list;
+			}
+		}
+	}
+}
