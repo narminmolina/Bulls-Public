@@ -50,6 +50,7 @@
 		transition: all 0.3s ease-in-out;
 		width: 90%;
 		margin: 0px auto;
+    opacity: 0;
 
 		strong {
 			display: block;
@@ -61,4 +62,8 @@
 			font-size: var(--fs-14);
 		}
 	}
+  	&:hover {
+		.collection-card-caption {
+			opacity: 1;
+		}}
 }

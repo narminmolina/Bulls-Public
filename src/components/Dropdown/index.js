@@ -13,9 +13,6 @@ const DropdownButton = () => {
 		setOpen(open => !open);
 	}, []);
 
-	useEffect(() => {
-		console.log('narmin');
-	}, [open]);
 
 	return (
 		<div className="dd-wrapper">

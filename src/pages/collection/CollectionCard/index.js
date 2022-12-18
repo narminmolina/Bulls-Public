@@ -1,8 +1,9 @@
 import './index.scss';
-
+import CollectionModal from 'components/Collection.modal';
 const CollectionCard = ({ name, img_url, number }) => {
+	const handleClick = () => {};
 	return (
-		<div className="collection-card">
+		<button onClick={handleClick} className="collection-card">
 			<div className="tesseract-box">
 				<span className="teserract-icon"></span>
 			</div>
@@ -13,7 +14,7 @@ const CollectionCard = ({ name, img_url, number }) => {
 				</strong>
 				<em>Custom</em>
 			</div>
-		</div>
+		</button>
 	);
 };
 

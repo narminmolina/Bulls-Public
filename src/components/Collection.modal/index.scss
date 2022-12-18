@@ -1,0 +1,24 @@
+.modal-body {
+	height: unset;
+	gap: 45px;
+	.modal-left,
+	.modal-right {
+		height: unset;
+		// flex: 1 1 0px;
+		width: 50%;
+	}
+	.modal-left {
+		max-width: unset;
+
+		.image-wrapper {
+			position: relative;
+			width: 340px;
+		}
+		img {
+			border-radius: var(--b-rad-15);
+			width: 450px;
+			width: 100%;
+		}
+	}
+  
+}
