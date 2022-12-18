@@ -2,6 +2,8 @@
 footer {
 	background-color: #1a1a1a;
 	padding: 20px;
+	font-family: var(--ff-unison-light);
+
 	.footer-wrapper {
 		display: flex;
 		align-items: center;
@@ -11,6 +13,11 @@ footer {
 				display: flex;
 				gap: 30px;
 				@include reset-list;
+				li {
+					a {
+						font-size: var(--fs-12);
+					}
+				}
 			}
 		}
 	}

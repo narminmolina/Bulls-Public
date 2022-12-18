@@ -17,7 +17,7 @@ export const Footer = () => {
 						<ul>
 							{socialMedias.map(({ title, link }, index) => (
 								<li key={index}>
-									<a href={link} title={title} target="_blank" rel="noopener noreferrer">
+									<a className="link" href={link} title={title} target="_blank" rel="noopener noreferrer">
 										{title}
 									</a>
 								</li>

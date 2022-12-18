@@ -1,0 +1,28 @@
+.collection-card {
+	background-color: transparent;
+	border: 0;
+	border-radius: var(--b-rad-10);
+	cursor: pointer;
+	height: 300px;
+	padding: 0;
+	position: relative;
+	.cube {
+		gap: 10px;
+		left: 15px;
+		position: absolute;
+		top: 15px;
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+		background: hsla(0, 0%, 100%, 0.251) 0 0 no-repeat padding-box;
+		border-radius: 100%;
+		display: inline-block;
+		height: 30px;
+		width: 30px;
+	}
+	& > img {
+		border-radius: var(--b-rad-10);
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+}

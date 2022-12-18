@@ -1,0 +1,95 @@
+@import 'scss/mixins.scss';
+
+.section-title {
+	font-family: var(--ff-unison-bold);
+	font-size: var(--fs-40);
+	color: var(--anis);
+	line-height: var(--lh-primary);
+	margin-bottom: 15px;
+}
+
+.section-description {
+	font-family: var(--ff-nato);
+	font-size: var(--fs-16);
+	color: var(--gray300);
+	line-height: var(--lh-22);
+	margin-bottom: 40px;
+}
+
+.tab-filter-buttons {
+	display: flex;
+	button {
+		flex: 1 1;
+		border: none;
+		background-color: #1e1e1e;
+		box-shadow: 1px 0px 7px #00000080;
+		border-radius: 7px;
+		opacity: 1;
+		padding: 12px 10px;
+		color: var(--white);
+		font-family: var(--ff-ocra);
+		cursor: pointer;
+		text-transform: uppercase;
+		&.active {
+			background-color: var(--pink);
+			box-shadow: 1px 1px 5px 1px #1e1e1e;
+			transform: scale(1.1);
+			transform: scale(1.025);
+		}
+	}
+}
+
+input[type='search'] {
+	background-color: transparent;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+	background-position: 20px 50%;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	border: 2px solid var(--gray700);
+	border-radius: 30px;
+	width: 100%;
+	font-size: var(--fs-16);
+	padding: 15px 20px;
+	color: var(--white);
+	text-indent: 40px;
+	transition: all 0.3s ease-in-out;
+	margin-top: 50px;
+	margin-bottom: 25px;
+
+	&:focus,
+	&:hover {
+		border-color: var(--white);
+	}
+}
+
+.tesseract-key {
+	margin: 50px 0px;
+	font-family: var(--ff-unison-light);
+	padding: 20px 0px;
+	border-bottom: 2px solid var(--gray700);
+	border-top: 2px solid var(--gray700);
+
+	strong {
+		display: block;
+		font-size: var(--fs-16);
+		margin-bottom: 30px;
+		text-transform: uppercase;
+	}
+	.key-item {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		color: #9ca197;
+		font-size: var(--fs-14);
+	}
+	.tesseract-icon {
+		display: inline-block;
+		background-image: url(../../../assets/img/tesseract.webp);
+		height: 48px;
+		width: 48px;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+    
+	}
+}

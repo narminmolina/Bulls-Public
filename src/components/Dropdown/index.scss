@@ -1,0 +1,47 @@
+.dd-wrapper {
+	position: relative;
+	svg {
+		fill: white;
+		margin-left: 10px;
+	}
+}
+
+.dd-menu {
+	position: absolute;
+	left: 0;
+	// top: calc(100% + 4px);
+	background-color: var(--pink);
+
+	border: 1px solid transparent;
+	border-radius: var(--b-rad-5);
+	padding: 0px;
+	width: 170px;
+	list-style: none;
+	margin-top: 10px;
+	&:hover {
+		border: 1px solid #bb1e54;
+	}
+	li {
+		text-align: center;
+		position: relative;
+		font-family: var(--ff-ocra);
+		font-size: var(--fs-14);
+		a {
+			display: block;
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+	}
+	li:hover {
+		background-color: #bb1e54;
+	}
+	li:first-child::after {
+		content: '';
+		position: absolute;
+		left: 12px;
+		bottom: 0;
+		height: 15px;
+		width: 80%;
+		border-bottom: 1px solid rgb(255, 109, 156);
+	}
+}
