@@ -6,23 +6,59 @@
 	height: 300px;
 	padding: 0;
 	position: relative;
-	.cube {
-		gap: 10px;
+	.tesseract-box {
 		left: 15px;
 		position: absolute;
 		top: 15px;
 		backdrop-filter: blur(6px);
-		-webkit-backdrop-filter: blur(6px);
 		background: hsla(0, 0%, 100%, 0.251) 0 0 no-repeat padding-box;
 		border-radius: 100%;
-		display: inline-block;
 		height: 30px;
 		width: 30px;
+		.teserract-icon {
+			display: inline-block;
+			background-image: url(../../../assets/img/tesseract.webp);
+			height: 100%;
+			width: 100%;
+			background-position: 50%;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
 	}
 	& > img {
 		border-radius: var(--b-rad-10);
 		height: 100%;
 		object-fit: cover;
 		width: 100%;
+	}
+
+	.collection-card-caption {
+		backdrop-filter: blur(10px);
+		background-color: hsla(0, 0%, 100%, 0.4);
+		border-radius: var(--b-rad-10);
+		color: var(--white);
+		display: flex;
+		flex-direction: column;
+		font-family: var(--ff-nato);
+		height: 85px;
+		padding: 10px;
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		text-align: left;
+		transform: translateX(-50%);
+		transition: all 0.3s ease-in-out;
+		width: 90%;
+		margin: 0px auto;
+
+		strong {
+			display: block;
+			font-family: var(--ff-unison-bold);
+			font-size: var(--fs-22);
+			margin-bottom: 20px;
+		}
+		em {
+			font-size: var(--fs-14);
+		}
 	}
 }
