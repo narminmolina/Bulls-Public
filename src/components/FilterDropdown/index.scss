@@ -1,6 +1,9 @@
 .filter-dd {
 	border: 2px solid var(--gray700);
 	border-radius: var(--b-rad-10);
+	& + .filter-dd {
+		margin-top: 15px;
+	}
 }
 .filter-dd-title {
 	background-color: transparent;
@@ -42,7 +45,6 @@
 	padding-bottom: 0;
 	padding-left: 25px;
 	padding-top: 0;
-	border-top: 2px solid var(--gray700);
 	overflow: scroll;
 	position: relative;
 	transition: all 0.3s ease-in-out;
@@ -51,7 +53,9 @@
 		max-height: 300px;
 		padding-bottom: 30px;
 		padding-top: 30px;
+		border-top: 2px solid var(--gray700);
 	}
+
 	.input-wrapper {
 		align-items: center;
 		display: flex;
