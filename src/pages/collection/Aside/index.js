@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import sortBy from 'lodash/sortBy';
-import groupBy from 'lodash/groupBy';
-
-import { toKebabCase } from 'utils';
+import { getTraitTypes } from 'api';
 
 import FilterDropdown from 'components/FilterDropdown';
 
@@ -25,19 +21,10 @@ const Aside = () => {
 	const [traitTypes, setTraitTypes] = useState([]);
 
 	useEffect(() => {
-		const getTraitTypes = async () => {
-			const response = await axios.get(`/trait/?limit=1000&offset=0`);
-			const traitTypes = response?.data?.results.map(({ value, trait_type, ...otherProps }) => ({
-				name: toKebabCase(`${trait_type} ${value}`),
-				id: toKebabCase(`${trait_type} ${value}`),
-				label: value,
-				value: trait_type,
-				...otherProps,
-			}))
+		(async () => {
+			const traitTypes = await getTraitTypes();
 			setTraitTypes(traitTypes);
-		};
-		// const groupedTraitTypes = sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => [key]);
-		getTraitTypes();
+		})();
 	}, []);
 
 	return (

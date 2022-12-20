@@ -5,3 +5,15 @@
 	margin-top: 120px;
 	position: relative;
 }
+
+.card-wrapper {
+	grid-gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.collection-cards {
+	.load-more-button {
+		margin: 40px auto 0 auto;
+	}
+}
