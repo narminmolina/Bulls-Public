@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useDebounce } from 'use-debounce';
+
 import { getTraitTypes } from 'api';
 
 import FilterDropdown from 'components/FilterDropdown';
@@ -19,6 +21,17 @@ const filterByOptions = [
 
 const Aside = () => {
 	const [traitTypes, setTraitTypes] = useState([]);
+	const [searchResult, setSearchResult] = useState();
+	const [debouncedSearch] = useDebounce(searchResult, 1000);
+
+	const handleSearchInputChange = useCallback(
+		event => {
+			console.log(event.target.value);
+			setSearchResult(result => ({ ...result, search: event.target.value }));
+			console.log(setSearchResult);
+		},
+		[setSearchResult]
+	);
 
 	useEffect(() => {
 		(async () => {
@@ -39,7 +52,7 @@ const Aside = () => {
 				<button>Owned</button>
 			</div>
 			<div className="search-filters-wrapper">
-				<input type="search" name="search" placeholder="Search" />
+				<input type="search" name="search" placeholder="Search" onChange={handleSearchInputChange} />
 				<FilterDropdown title="Sort by" items={sortByOptions} inputType="radio" />
 				<FilterDropdown title="Filter by" items={filterByOptions} inputType="radio" />
 				{traitTypes.map(([key, values]) => (

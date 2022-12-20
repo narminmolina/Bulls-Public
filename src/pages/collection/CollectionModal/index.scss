@@ -1,15 +1,48 @@
-.modal-body {
-	height: unset;
-	gap: 45px;
-	.modal-left,
-	.modal-right {
-		height: unset;
-		// flex: 1 1 0px;
-		width: 50%;
-	}
-	.modal-left {
-		max-width: unset;
+.modal {
+	margin: 60px 100px;
+	height: 100%;
+	padding: 45px;
+	position: relative;
 
+	.modal-close-x {
+		cursor: pointer;
+	}
+	.modal-close-button {
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+		outline: 0;
+		padding: 0;
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		z-index: var(--zi-10);
+	}
+	.modal-bull-container {
+		display: flex;
+		gap: 45px;
+		justify-content: space-between;
+		.modal-left,
+		.modal-right {
+			width: 50%;
+		}
+	}
+
+	.modal-left {
+		display: flex;
+		flex-direction: column;
+
+		em {
+			font-size: 12px;
+			color: var(--pink);
+			font-family: var(--ff-unison-light);
+		}
+		strong {
+			margin: 20px 0;
+			color: var(--anis);
+			font-family: var(--ff-unison-bold);
+			font-size: 20px;
+		}
 		.image-wrapper {
 			position: relative;
 			width: 340px;
@@ -20,5 +53,108 @@
 			width: 100%;
 		}
 	}
-  
+
+	.modal-right {
+		border-top: 1px solid var(--gray300);
+		display: flex;
+		flex-direction: column;
+		padding-top: 20px;
+		h2 {
+			font-family: var(--ff-unison-light);
+			font-size: var(--fs-12);
+			margin-bottom: 45px;
+		}
+		.traits {
+			height: 340px;
+			list-style: none;
+			margin: 0;
+			overflow: scroll;
+			padding: 0;
+			.trait {
+				align-items: center;
+				border: 1px solid var(--gray300);
+				border-radius: var(--b-rad-8);
+				display: flex;
+				font-family: var(--ff-nato);
+				font-size: var(--fs-13);
+				justify-content: space-between;
+				padding: 14px 20px;
+				strong {
+					font-family: var(--ff-unison-light);
+					font-size: var(--fs-14);
+					font-size: var(--fs-12);
+					margin-right: 45px;
+					width: 130px;
+				}
+				span {
+					color: var(--gray300);
+					display: inline-block;
+					font-size: var(--fs-12);
+					margin-right: auto;
+					overflow: hidden;
+					text-align: left;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					width: 230px;
+				}
+				em {
+					flex-basis: 45px;
+					font-size: var(--fs-12);
+					text-align: right;
+				}
+			}
+		}
+	}
+	.modal-footer {
+		border-top: 1px solid var(--gray300);
+		margin-top: 30px;
+		padding-top: 30px;
+		h1 {
+			display: inline-block;
+			font-family: var(--ff-unison-light);
+			font-size: var(--fs-14);
+			font-size: var(--fs-11);
+			margin-bottom: 30px;
+		}
+
+		.market-places {
+			display: flex;
+			gap: 20px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			.market-place-card {
+				backdrop-filter: blur(10px);
+				background-color: #494948;
+				border-radius: var(--b-rad-10);
+				height: 90%;
+				a {
+					align-items: center;
+					cursor: pointer;
+					display: flex;
+					height: 100%;
+					padding: 10px;
+					width: 100%;
+					img {
+						height: 38px;
+						margin-right: 18px;
+						object-fit: contain;
+					}
+					span {
+						border: 1px solid var(--pink);
+						border-radius: var(--b-rad-5);
+						color: var(--white);
+						display: inline-block;
+						font-family: var(--ff-ocra);
+						font-size: var(--fs-12);
+						padding: 10px 15px;
+						text-transform: uppercase;
+						transition: all 0.3s ease-in-out;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
 }
