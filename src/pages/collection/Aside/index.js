@@ -48,14 +48,7 @@ const Aside = () => {
 				{traitTypes.map(([key, values]) => (
 					<FilterDropdown key={key} title={key} items={values} />
 				))}
-				{traitTypes.map((traitType, index) => (
-					<div key={index}>
-						{traitType[0]} - {traitType[1].map(item => item.label)}
-						<br />
-						<br />
-						<br />
-					</div>
-				))}
+			
 			</div>
 			<div className="tesseract-key">
 				<strong>KEYS</strong>
