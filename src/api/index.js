@@ -13,10 +13,10 @@ import { toKebabCase } from 'utils';
 // const COLLECTION_3D = 2;
 // const FUSER_ADDRESS = 'terra17qtp3f3xzwruul7tlxys6p2zz3gdsse33cn7gn';
 
-export const getCollectionItems = async () => {
-	const response = await axios.get(`/nft/?collection=6`);
+export const getCollectionItems = async nextPageUrl => {
+	const response = await axios.get(nextPageUrl ?? `/nft/?collection=6&limit=500&offset=500`);
 	const data = response.data;
-  return data;
+	return data;
 };
 
 // 	const { data } = await axios.get(nextPageUrl ? nextPageUrl : `/nft/?${query}`);

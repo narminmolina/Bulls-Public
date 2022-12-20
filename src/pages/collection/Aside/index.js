@@ -17,9 +17,6 @@ const filterByOptions = [
 	{ name: 'bonded', id: 'non-bonded', label: 'Non-bonded', value: 0 },
 ];
 
-
-
-
 const Aside = () => {
 	const [traitTypes, setTraitTypes] = useState([]);
 
@@ -31,7 +28,7 @@ const Aside = () => {
 	}, []);
 
 	return (
-		<aside className='aside'>
+		<aside className="aside">
 			<h1 className="section-title">Collection</h1>
 			<p className="section-description">
 				Search the entire Bull Club Collections.
@@ -48,7 +45,6 @@ const Aside = () => {
 				{traitTypes.map(([key, values]) => (
 					<FilterDropdown key={key} title={key} items={values} />
 				))}
-			
 			</div>
 			<div className="tesseract-key">
 				<strong>KEYS</strong>

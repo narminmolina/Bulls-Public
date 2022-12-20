@@ -11,7 +11,7 @@ const CollectionCard = ({ name, img_url, number, has_cube = false, ...otherProps
 					<span className="teserract-icon"></span>
 				</div>
 			)}
-			<img src={img_url} alt={name} />
+			<img src={img_url ?? blackBull} alt={name} />
 			<div className="collection-card-caption">
 				<strong>
 					#{number} <span>/1000</span>
