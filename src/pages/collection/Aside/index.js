@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useDebounce } from 'use-debounce';
-
-import { getTraitTypes } from 'api';
+import { isEmpty } from 'lodash';
+import { getTraitTypes, getCollectionItems } from 'api';
 
 import FilterDropdown from 'components/FilterDropdown';
 
@@ -22,7 +22,13 @@ const filterByOptions = [
 const Aside = () => {
 	const [traitTypes, setTraitTypes] = useState([]);
 	const [searchResult, setSearchResult] = useState();
-	const [debouncedSearch] = useDebounce(searchResult, 1000);
+	// const [debouncedSearch] = useDebounce(searchResult, 1000);
+	// const [collection, setCollection] = useState([]);
+
+	// useEffect(() => async () => {
+	// 	const { result } = await getCollectionItems(debouncedSearch);
+	// 	setCollection(result);
+	// });
 
 	const handleSearchInputChange = useCallback(
 		event => {
