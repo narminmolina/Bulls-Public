@@ -33,7 +33,6 @@ const Collection = () => {
 			<div className="container extended">
 				<div className="collection-wrapper">
 					<Aside />
-
 					<div className="collection-cards">
 						<div className="card-wrapper">
 							{collection?.map(props => (

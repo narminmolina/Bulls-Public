@@ -17,44 +17,8 @@ const filterByOptions = [
 	{ name: 'bonded', id: 'non-bonded', label: 'Non-bonded', value: 0 },
 ];
 
-const getTraitTypes = async () => {
-	const response = await axios.get(`https://launchpad.webisoft.org/api/trait/?limit=1000&ofset=0`);
 
-	console.log({ response });
 
-	const traitTypes = response?.data?.results.map(({ value, trait_type, ...otherProps }) => ({
-		name: toKebabCase(`${trait_type} ${value}`),
-		id: toKebabCase(`${trait_type} ${value}`),
-		label: value,
-		value: trait_type,
-		...otherProps,
-	}));
-
-	console.log({
-		//
-		traitTypes,
-		groupedTraitTypes: groupBy(traitTypes, 'value'),
-		ObjectEntries: Object.entries(groupBy(traitTypes, 'value')),
-		sortBy: sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key),
-	});
-
-	return sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key);
-	// console.log(response.data.results, '🫠');
-
-	// const traitTypes = response?.data?.results.map(({ value, trait_type, ...otherProps }) => ({
-	// 	name: toKebabCase(`${trait_type} ${value}`),
-	// 	id: toKebabCase(`${trait_type} ${value}`),
-	// 	label: value,
-	// 	value: trait_type,
-	// 	...otherProps,
-	// }));
-
-	// console.log({ traitTypes });
-
-	// setTraitTypes(response.data.results);
-};
-
-const ttt = ['asdasd', 'asdasd', 'sdasds', 'asdasd'];
 
 const Aside = () => {
 	const [traitTypes, setTraitTypes] = useState([]);
@@ -67,7 +31,7 @@ const Aside = () => {
 	}, []);
 
 	return (
-		<aside>
+		<aside className='aside'>
 			<h1 className="section-title">Collection</h1>
 			<p className="section-description">
 				Search the entire Bull Club Collections.

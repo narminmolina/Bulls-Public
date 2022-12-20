@@ -16,9 +16,7 @@ import { toKebabCase } from 'utils';
 export const getCollectionItems = async () => {
 	const response = await axios.get(`/nft/?collection=6`);
 	const data = response.data;
-  console.log(data);
-	return data;
-
+  return data;
 };
 
 // 	const { data } = await axios.get(nextPageUrl ? nextPageUrl : `/nft/?${query}`);
@@ -36,13 +34,13 @@ export const getTraitTypes = async () => {
 		...otherProps,
 	}));
 
-	// console.log({
-	// 	//
-	// 	traitTypes,
-	// 	groupedBy: groupBy(traitTypes, 'value'),
-	// 	ObjectEntries: Object.entries(groupBy(traitTypes, 'value')),
-	// 	sortBy: sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key),
-	// });
+	console.log({
+		//
+		traitTypes,
+		groupedBy: groupBy(traitTypes, 'value'),
+		ObjectEntries: Object.entries(groupBy(traitTypes, 'value')),
+		sortBy: sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key),
+	});
 	const groupedTraitTypes = sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => [key]);
 
 	return groupedTraitTypes;

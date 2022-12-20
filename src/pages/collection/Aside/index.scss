@@ -1,5 +1,12 @@
 @import 'scss/mixins.scss';
 
+.aside {
+	position: sticky;
+	top: 30px;
+	flex-basis: 360px;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
 .section-title {
 	font-family: var(--ff-unison-bold);
 	font-size: var(--fs-40);
@@ -90,6 +97,5 @@ input[type='search'] {
 		background-position: 50%;
 		background-repeat: no-repeat;
 		background-size: contain;
-
 	}
 }
