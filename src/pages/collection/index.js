@@ -26,6 +26,10 @@ const filterByOptions = [
 const Collection = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [collection, setCollection] = useState([]);
+	const [totalCount, setTotalCount] = useState(0);
+	const [nextPageUrl, setNextPageUrl] = useState('');
+	const [traitTypes, setTraitTypes] = useState([]);
+
 	const [filters, setFilters] = useState({
 		attributes: [],
 		search: '',
@@ -33,22 +37,10 @@ const Collection = () => {
 		solana_owner_wallet: null,
 		ordering: 'number',
 	});
-	const [totalCount, setTotalCount] = useState(0);
-	const [nextPageUrl, setNextPageUrl] = useState('');
-	const [traitTypes, setTraitTypes] = useState([]);
-	const [searchResult, setSearchResult] = useState();
+
 	const [debouncedFilters] = useDebounce(filters, 500);
 
 	console.log({ collection, totalCount, nextPageUrl });
-
-	const handleSearchInputChange = useCallback(
-		event => {
-			console.log(event.target.value);
-			setSearchResult(result => ({ ...result, search: event.target.value }));
-			console.log(setSearchResult);
-		},
-		[setSearchResult]
-	);
 
 	useEffect(() => {
 		(async () => {
@@ -61,7 +53,7 @@ const Collection = () => {
 		(async () => {
 			if (isEmpty(collection)) {
 				setIsLoading(true);
-				const { results, next, count } = await getCollectionItems();
+				const { results, next, count } = await getCollectionItems(debouncedFilters);
 				setCollection(sortBy(results, [item => item.img_url === null]));
 				setNextPageUrl(next);
 				setTotalCount(count);
@@ -70,13 +62,19 @@ const Collection = () => {
 		})();
 	});
 
+	const handleSearchInputChange = useCallback(
+		event => {
+			setFilters(result => ({ ...result, search: event.target.value }));
+		},
+		[setFilters]
+	);
 	const handleLoadMoreButtonClick = useCallback(async () => {
 		setIsLoading(true);
-		const { results, next } = await getCollectionItems(nextPageUrl);
+		const { results, next } = await getCollectionItems({ ...debouncedFilters, nextPageUrl });
 		setCollection(prevCollection => [...prevCollection, ...results]);
 		setNextPageUrl(next);
 		setIsLoading(false);
-	}, [nextPageUrl]);
+	}, [nextPageUrl, debouncedFilters]);
 
 	return (
 		<Base title="CollectionPage">

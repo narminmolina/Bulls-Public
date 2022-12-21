@@ -2,7 +2,7 @@ import qs from 'qs';
 import axios from 'axios';
 // import dayjs from 'dayjs';
 import sortBy from 'lodash/sortBy';
-// import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash/isEmpty';
 import groupBy from 'lodash/groupBy';
 
 // import { NET } from 'api/constants';
@@ -13,8 +13,20 @@ import { toKebabCase } from 'utils';
 // const COLLECTION_3D = 2;
 // const FUSER_ADDRESS = 'terra17qtp3f3xzwruul7tlxys6p2zz3gdsse33cn7gn';
 
-export const getCollectionItems = async nextPageUrl => {
-	const response = await axios.get(nextPageUrl ?? `/nft/?collection=6&limit=500&offset=500`);
+export const getCollectionItems = async ({ attributes, search, ordering, bonded, solana_owner_wallet, nextPageUrl }) => {
+	const query = qs.stringify(
+		{
+			collection: 6,
+			solana_owner_wallet,
+			search,
+			bonded,
+			ordering,
+			attribute: isEmpty(attributes) ? null : attributes.map(attribute => JSON.stringify(attribute)),
+		},
+		{ arrayFormat: 'repeat', skipNulls: true }
+	);
+
+	const response = await axios.get(nextPageUrl ?? `/nft/?${query}`);
 	const data = response.data;
 	return data;
 };
