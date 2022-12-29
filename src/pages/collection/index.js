@@ -1,6 +1,7 @@
 import { useEffect, useCallback, useState } from 'react';
 import { isEmpty, sortBy } from 'lodash';
 import { useDebounce } from 'use-debounce';
+import { useQuery } from 'react-query';
 
 import { Button } from 'components/Button';
 import { Base } from 'Base';
@@ -24,7 +25,6 @@ const filterByOptions = [
 ];
 
 const Collection = () => {
-	const [isLoading, setIsLoading] = useState(false);
 	const [collection, setCollection] = useState([]);
 	const [totalCount, setTotalCount] = useState(0);
 	const [nextPageUrl, setNextPageUrl] = useState('');
@@ -40,40 +40,33 @@ const Collection = () => {
 
 	const [debouncedFilters] = useDebounce(filters, 500);
 
-	console.log({ collection, totalCount, nextPageUrl });
-
-	useEffect(() => {
-		(async () => {
-			const traitTypes = await getTraitTypes();
-			setTraitTypes(traitTypes);
-		})();
-	}, []);
-
-	useEffect(() => {
-		(async () => {
-			if (isEmpty(collection)) {
-				setIsLoading(true);
-				const { results, next, count } = await getCollectionItems(debouncedFilters);
-				setCollection(sortBy(results, [item => item.img_url === null]));
-				setNextPageUrl(next);
-				setTotalCount(count);
-				setIsLoading(false);
-			}
-		})();
+	const { isLoading, isFetching } = useQuery(['collection', debouncedFilters], () => getCollectionItems(debouncedFilters), {
+		onSuccess: ({ results, next, count }) => {
+			setCollection(sortBy(results, [item => item.img_url === null]));
+			setNextPageUrl(next);
+			setTotalCount(count);
+		},
+		refetchOnWindowFocus: false,
 	});
+
+useQuery('traitTypes', () => getTraitTypes(), {
+	onSuccess: groupedTraitTypes => {
+		setTraitTypes(groupedTraitTypes);
+	},
+	refetchOnWindowFocus: false,
+});
 
 	const handleSearchInputChange = useCallback(
 		event => {
-			setFilters(result => ({ ...result, search: event.target.value }));
-		},
+			setFilters(filters => ({ ...filters, search: event.target.value }));
+
+    },
 		[setFilters]
 	);
 	const handleLoadMoreButtonClick = useCallback(async () => {
-		setIsLoading(true);
 		const { results, next } = await getCollectionItems({ ...debouncedFilters, nextPageUrl });
 		setCollection(prevCollection => [...prevCollection, ...results]);
 		setNextPageUrl(next);
-		setIsLoading(false);
 	}, [nextPageUrl, debouncedFilters]);
 
 	return (
@@ -95,11 +88,11 @@ const Collection = () => {
 							<button>Owned</button>
 						</div>
 						<div className="search-filters-wrapper">
-							<input type="search" name="search" placeholder="Search" onChange={handleSearchInputChange} />
+							<input value={filters.search} type="search" name="search" placeholder="Search" onChange={handleSearchInputChange} />
 							<FilterDropdown title="Sort by" items={sortByOptions} setFilters={setFilters} inputType="radio" />
 							<FilterDropdown title="Filter by" items={filterByOptions} setFilters={setFilters} inputType="radio" />
 							{traitTypes.map(([key, values]) => (
-								<FilterDropdown key={key} title={key} items={values} />
+								<FilterDropdown key={key} title={key} items={values} setFilters={setFilters} attributes />
 							))}
 						</div>
 						<div className="tesseract-key">

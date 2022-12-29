@@ -46,13 +46,13 @@ export const getTraitTypes = async () => {
 		...otherProps,
 	}));
 
-	// console.log({
-	// 	//
-	// 	traitTypes,
-	// 	groupedBy: groupBy(traitTypes, 'value'),
-	// 	ObjectEntries: Object.entries(groupBy(traitTypes, 'value')),
-	// 	sortBy: sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key),
-	// });
+	console.log({
+		//
+
+		// groupedBy: groupBy(traitTypes, 'value'),
+		// ObjectEntries: Object.entries(groupBy(traitTypes, 'value')),
+		sortBy: sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => key),
+	});
 	const groupedTraitTypes = sortBy(Object.entries(groupBy(traitTypes, 'value')), ([key]) => [key]);
 
 	return groupedTraitTypes;
