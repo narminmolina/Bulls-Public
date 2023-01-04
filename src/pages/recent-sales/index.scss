@@ -1,0 +1,162 @@
+@import 'scss/mixins.scss';
+
+.recent-sales {
+	margin-bottom: 120px;
+	margin-top: 120px;
+	display: flex;
+	position: relative;
+	@include mobile {
+		margin-bottom: 40px;
+		margin-top: 40px;
+		flex-direction: column;
+	}
+	.aside {
+		margin-bottom: 0;
+		.marketplaces {
+			@include mobile {
+				display: none;
+			}
+			margin-top: 30px;
+			.marketplace-card {
+				width: 90%;
+			}
+			strong {
+				font-size: 12px;
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				font-family: var(--ff-unison-bold);
+				margin-bottom: 15px;
+				&::before {
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25.23 20'%3E%3Cdefs%3E%3CclipPath id='d'%3E%3Cpath class='f' d='M0 0h25.23v20H0z'/%3E%3C/clipPath%3E%3CclipPath id='e'%3E%3Cpath class='f' d='M0 0h25.25v20H0z'/%3E%3C/clipPath%3E%3Cstyle%3E.f%7Bfill:none%7D%3C/style%3E%3C/defs%3E%3Cg id='b'%3E%3Cg style='clip-path:url(%23d)' id='c'%3E%3Cg style='isolation:isolate'%3E%3Cg style='clip-path:url(%23e)'%3E%3Cpath d='M4.92 10.25c-.04-.25-.18-.46-.4-.55-.25-.09-.51-.02-.7.22-.31.39-.61.8-.9 1.2-.24.33-.2.69.09.89.27.2.62.12.86-.19.3-.38.59-.77.87-1.16.09-.12.13-.27.19-.41m4.2 6.08c.03.25.17.46.4.55.25.1.51.03.7-.22.32-.41.64-.82.93-1.24.09-.14.13-.34.12-.5-.02-.23-.19-.38-.42-.43a.58.58 0 0 0-.63.23c-.31.41-.63.82-.93 1.24-.08.11-.11.25-.16.38m-1.39-5.38c-.03-.27-.18-.48-.41-.56-.25-.09-.51-.01-.7.23-.54.7-1.07 1.41-1.59 2.13-.1.14-.14.35-.12.53.02.24.21.39.44.44.27.06.48-.07.63-.28.52-.69 1.04-1.38 1.55-2.07.09-.12.13-.27.19-.41m-.14 4.36c.24 0 .4-.12.53-.3l1.08-1.44c.26-.35.53-.69.78-1.04.23-.32.19-.66-.08-.87-.28-.21-.63-.14-.89.21l-1.8 2.4c-.06.08-.11.16-.15.25-.16.38.12.79.53.79m15.9-7.64c-1.22-2.01-2.42-4-3.63-6-.73.32-1.43.62-2.12.93-.29.13-.57.15-.88.06-1.22-.37-2.44-.72-3.65-1.09a.457.457 0 0 0-.41.05C10.8 2.76 8.79 3.87 6.78 4.98c-.07.04-.14.08-.25.15.14.24.25.48.42.67.47.53 1.17.62 1.87.28 1.12-.55 2.23-1.12 3.35-1.66.19-.09.42-.14.63-.14.58-.01 1.17.01 1.75 0 .32 0 .59.09.85.27 1.98 1.4 3.97 2.8 5.96 4.2.07.05.15.1.23.15.64-.4 1.27-.8 1.93-1.21m-11.14 8.64c.99.7 1.96 1.4 2.95 2.08.13.09.35.11.51.09.26-.03.44-.21.51-.47.07-.29 0-.54-.25-.72-.39-.29-.79-.56-1.18-.85-.35-.26-.42-.69-.19-1.02.23-.34.67-.41 1.05-.17.09.06.18.12.26.18.59.42 1.18.84 1.77 1.25.25.18.52.2.79.04.25-.15.38-.4.3-.67a.939.939 0 0 0-.35-.5c-.68-.51-1.39-1-2.08-1.49-.44-.32-.56-.75-.3-1.11.22-.32.7-.45 1.15-.1.43.34.89.64 1.34.96.36.26.72.52 1.09.77.42.27.94.07 1.06-.39.07-.28-.04-.55-.33-.76l-1.77-1.26c-.39-.28-.78-.55-1.16-.83a.711.711 0 0 1-.25-.82c.11-.3.33-.5.64-.49.2 0 .42.09.58.2 1.09.75 2.16 1.52 3.24 2.29.09.06.17.13.27.18.31.16.7.06.89-.23a.67.67 0 0 0-.13-.89c-.06-.05-.13-.1-.2-.15-2.35-1.66-4.72-3.3-7.05-5-.68-.49-1.35-.81-2.19-.69-.07.01-.15-.01-.22 0-.2.04-.42.05-.61.14-1.09.52-2.15 1.09-3.24 1.6-2 .92-4.21-.54-4.19-2.74 0-.37.15-.62.48-.79.27-.14.53-.29.83-.46-.48-.31-.93-.6-1.4-.89-1.08 1.79-2.15 3.55-3.22 5.32.36.23.69.43 1 .65.15.1.24.09.39 0 .72-.48 1.48-.51 2.22-.07.27.16.5.42.75.64 1.27-.53 2-.28 2.93.99 1.82-.35 3.1 1.38 2.36 2.96 1.29.55 1.76 2.02.94 3.24M0 7.96C1.35 5.73 2.69 3.5 4.04 1.27 4.33.79 4.73.7 5.21 1c.82.52 1.63 1.04 2.45 1.57.14.09.24.09.38 0C9.49 1.76 10.95.96 12.41.15c.28-.16.55-.19.87-.1 1.22.37 2.45.73 3.68 1.1.18.06.34.04.52-.04.75-.34 1.51-.67 2.27-1 .5-.22.84-.11 1.12.35 1.4 2.32 2.8 4.63 4.2 6.95.3.5.22.88-.28 1.19-.63.4-1.26.8-1.91 1.21.3.23.6.44.88.68.62.52.88 1.44.64 2.19-.28.88-.99 1.48-1.85 1.54-.22.02-.29.09-.34.3-.22.84-.77 1.37-1.62 1.58-.12.03-.22.04-.24.22-.11 1.26-1.17 2.11-2.44 1.96h-.05c-.19.33-.32.66-.53.93-.66.83-1.86 1.05-2.75.47-.98-.64-1.92-1.35-2.88-2.02-.07-.05-.15-.1-.23-.16-.31.41-.69.7-1.19.84-1.04.28-2.14-.29-2.48-1.32-.05-.16-.13-.21-.3-.21-.87-.04-1.56-.57-1.84-1.39-.05-.14-.11-.18-.26-.2-.93-.07-1.57-.54-1.88-1.42-.06-.17-.17-.17-.3-.18-1.02-.11-1.71-.7-1.91-1.69-.12-.6.04-1.15.4-1.65.1-.13.19-.26.3-.41-.48-.31-.94-.61-1.42-.9-.25-.15-.47-.32-.6-.59v-.39' style='fill:%23939597'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+					background-repeat: no-repeat;
+					height: 22px;
+					width: 22px;
+					content: '';
+					display: inline-block;
+				}
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				list-style: none;
+				padding: 0;
+				a {
+					justify-content: space-between;
+					span {
+						text-align: center;
+						min-width: 180px;
+					}
+				}
+			}
+		}
+	}
+	.filter-tab-buttons {
+		margin-top: 30px;
+	}
+	&-table {
+		width: 100%;
+		position: relative;
+		@include mobile {
+			min-height: 300px;
+		}
+		&-header {
+			font-family: var(--ff-nato);
+			font-size: var(--fs-14);
+			padding: 15px 5px;
+			display: grid;
+			color: var(--gray300);
+			align-items: center;
+			justify-content: space-between;
+			grid-template-columns: 290px 100px 60px 60px 170px 100px;
+			@include mobile {
+				display: none;
+			}
+			span {
+				display: inline-block;
+				text-align: center;
+				&.name {
+					margin-left: 0;
+					justify-content: center;
+				}
+			}
+		}
+		&-row {
+			border-top: 1px solid var(--gray700);
+			padding: 15px 5px;
+			display: grid;
+			align-items: center;
+			justify-content: space-between;
+			grid-gap: 25px;
+			grid-template-columns: 290px 100px 60px 60px 170px 100px;
+			@include mobile {
+				padding: 20px 0;
+				display: flex;
+				justify-content: space-between;
+				grid-gap: 20px;
+			}
+			.price,
+			.rank,
+			.marketplace,
+			.sold-at {
+				font-family: var(--ff-anek);
+				color: var(--white);
+				text-align: center;
+			}
+		}
+		.name {
+			font-size: var(--fs-16);
+			display: flex;
+			align-items: center;
+			@include mobile {
+				font-size: var(--fs-14);
+			}
+			img {
+				border-radius: var(--b-rad-3);
+				height: 55px;
+				width: 55px;
+				margin-right: 20px;
+				@include mobile {
+					height: 45px;
+					width: 45px;
+					margin-right: 15px;
+				}
+			}
+			.name-text {
+				font-size: 15px;
+				strong {
+					font-family: var(--ff-unison-bold);
+				}
+				span {
+					font-family: var(--ff-unison-light);
+				}
+			}
+			.sold-at {
+				font-size: var(--fs-12);
+				display: none;
+				color: var(--gray400);
+				text-align: left;
+				@include mobile {
+					margin-top: 10px;
+					display: block;
+				}
+			}
+		}
+		.marketplace {
+			img {
+				width: 40px;
+				height: 40px;
+				object-fit: contain;
+			}
+		}
+		.price,
+		.rank,
+		.marketplace,
+		.sold-at {
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+}
